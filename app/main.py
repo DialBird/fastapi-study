@@ -1,10 +1,22 @@
-from fastapi import FastAPI, Response, status, HTTPException
+from fastapi import FastAPI, Response, status, HTTPException, Depends
 from pydantic import BaseModel
-from random import randrange
 import psycopg2
 from psycopg2.extras import RealDictCursor
+from sqlalchemy.orm import session
+from . import models
+from .database import engine, SessionLocal
+
+models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
 
 class Post(BaseModel):
@@ -36,6 +48,12 @@ my_posts = [
 @app.get("/")
 def root():
     return {"message": "Hello World"}
+
+
+@app.get("/sqlalchemy")
+def test_posts(db: session = Depends(get_db)):
+    posts = db.query(models.Post).all()
+    return {"data": posts}
 
 
 @app.get("/posts")
