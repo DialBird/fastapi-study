@@ -13,3 +13,6 @@ pip-selfcheck.json
 
 __pycache__
 .env
+
+metabase.db.*
+plugins/*
