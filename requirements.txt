@@ -17,6 +17,7 @@ mypy-extensions==0.4.3
 orjson==3.6.4
 pathspec==0.9.0
 platformdirs==2.4.0
+psycopg2==2.9.1
 pydantic==1.8.2
 python-dotenv==0.19.1
 python-multipart==0.0.5
