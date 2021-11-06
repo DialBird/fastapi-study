@@ -26,6 +26,7 @@ regex==2021.11.2
 requests==2.26.0
 six==1.16.0
 sniffio==1.2.0
+SQLAlchemy==1.4.26
 starlette==0.16.0
 tomli==1.2.2
 typing-extensions==3.10.0.2
