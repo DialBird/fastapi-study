@@ -34,8 +34,8 @@ class Post(PostBase):
 
 
 class PostOut(BaseModel):
-    post: Post
-    # votes: int
+    Post: Post
+    votes: int
 
     class Config:
         orm_mode = True
