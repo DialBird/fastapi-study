@@ -16,7 +16,6 @@ httptools==0.2.0
 idna==3.3
 itsdangerous==2.0.1
 Jinja2==3.0.2
-jose==1.0.0
 Mako==1.1.5
 MarkupSafe==2.0.1
 mypy-extensions==0.4.3
